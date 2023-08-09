@@ -54,7 +54,12 @@ On Client-1, navigate to the shared folder (start, run, \\dc-1). Try to access t
 <img src="" height="80%" width="80%" alt=""/>
 </p>
 <p>
-First, add a new forest and type a root for the username. Create a password. Exit out of DC1 and then login back using the root and password that you created.
+Go back to DC-1, in Active Directory, create a security group called “ACCOUNTANTS”
+On the “accounting” folder you created earlier, set the following permissions:
+Folder: “accounting”, Group: “ACCOUNTANTS”, Permissions: “Read/Write”
+On Client-1, as  <someuser>, try to access the accountants folder. It should fail.
+Log out of Client-1 as  <someuser>
+
 </p>
 <br />
 
@@ -63,6 +68,7 @@ First, add a new forest and type a root for the username. Create a password. Exi
 <img src="" height="80%" width="80%" alt=""/>
 </p>
 <p>
-First, create Jane Doe as an admin user and create the username as "jane_admin". Next, add Jane Doe into the Domain Admins group. Now log into Jane Doe's account as admin by typing "mydomain.com\jane_admin" as the username and your password.
+On DC-1, make <someuser> a member of the “ACCOUNTANTS”  Security Group
+Sign back into Client-1 as <someuser> and try to access the “accounting” share in \\DC-1\ - Does it work now?
 </p>
 <br />
