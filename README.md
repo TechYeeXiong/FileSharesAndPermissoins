@@ -21,7 +21,7 @@
 <img src="https://i.imgur.com/enWYm4I.jpg" height="80%" width="80%" alt="Make the DC1 into a static ip address"/>
 </p>
 <p>
-In DC1, reset a normal user's account. After resetting, log into the user with Client1's pc. In DC1, go to C:\drive; create 4 folders named "read-access", "write-access", "no-access", and "accounting".
+In DC1, reset a normal user's account. After resetting, log into the user with Client1's pc. In DC1, go to C:\drive; create 4 folders named "read-access", "write-access", and "no-access".
 </p>
 <br />
 
@@ -45,30 +45,5 @@ Create in Folder: “no-access”, Group: “Domain Admins”, “Permissions: �
 </p>
 <p>
 On Client-1, navigate to the shared folder (start, run, \\dc-1). Try to access the folders you just created. Which folders can you access? Which folders can you create stuff in? Does it make sense?
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/UeeTuia.jpg" height="80%" width="80%" alt="add a new forest"/>
-<img src="" height="80%" width="80%" alt=""/>
-<img src="" height="80%" width="80%" alt=""/>
-</p>
-<p>
-Go back to DC-1, in Active Directory, create a security group called “ACCOUNTANTS”
-On the “accounting” folder you created earlier, set the following permissions:
-Folder: “accounting”, Group: “ACCOUNTANTS”, Permissions: “Read/Write”
-On Client-1, as  <someuser>, try to access the accountants folder. It should fail.
-Log out of Client-1 as  <someuser>
-
-</p>
-<br />
-
-<p>
-<img src="" height="80%" width="80%" alt=""/>
-<img src="" height="80%" width="80%" alt=""/>
-</p>
-<p>
-On DC-1, make <someuser> a member of the “ACCOUNTANTS”  Security Group
-Sign back into Client-1 as <someuser> and try to access the “accounting” share in \\DC-1\ - Does it work now?
 </p>
 <br />
