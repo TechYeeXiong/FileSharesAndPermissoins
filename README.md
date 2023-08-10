@@ -7,7 +7,6 @@
 
 - Microsoft Azure (Virtual Machines/Compute)
 - Remote Desktop
-- Command Line Interface (CLI)
 
 <h2>Operating Systems Used </h2>
 
